@@ -1,6 +1,5 @@
 import { AmqpConnectionManagerOptions } from 'amqp-connection-manager';
 import { Channel, ConsumeMessage, Message, Options } from 'amqplib';
-import { RabbitMessageContext } from './rabbit-message.context';
 
 export interface IRabbitAssert extends Options.AssertQueue {
   prefetch?: number;
@@ -31,8 +30,6 @@ export interface IRouteOptions {
   manualAck?: boolean;
   msgFactory?: (msg: Message) => unknown[];
 }
-
-export type RabbitHandler = (data: unknown, context: RabbitMessageContext) => Promise<unknown>;
 
 export interface IRabbitPattern {
   queue: string;

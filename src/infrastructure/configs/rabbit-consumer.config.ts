@@ -6,6 +6,8 @@ import { EnvService } from './env.service';
 @Injectable()
 export class RabbitConsumerConfig implements IRabbitConsumerConfig {
 
+  public static RABBIT_TEST_QUEUE = 'my_test_queue';
+
   public readonly hostname: string;
   public readonly port: number;
   public readonly username: string;
@@ -23,7 +25,8 @@ export class RabbitConsumerConfig implements IRabbitConsumerConfig {
 
   private initQueues(): void {
     this.queues.push({
-      name: 'my_test_queue',
+      name: RabbitConsumerConfig.RABBIT_TEST_QUEUE,
+      durable: false,
     });
   }
 

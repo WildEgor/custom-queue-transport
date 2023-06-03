@@ -7,6 +7,6 @@ export const RabbitRoute = (queue: string, options?: IRouteOptions): MethodDecor
   SetMetadata(RMQ_ROUTES_OPTIONS, {
     ...options,
   }),
-  SetMetadata(RMQ_ROUTES_PATH, queue),
+  SetMetadata(RMQ_ROUTES_PATH, queue), // We can also get metadata in transport, but it no used
   MessagePattern({ queue, transport: RMQ_TRANSPORT }),
 );

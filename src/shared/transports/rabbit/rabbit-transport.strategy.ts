@@ -8,10 +8,10 @@ import {
   IRabbitPattern,
   IRabbitTransportInitProps,
   IRabbitTransportOptions,
-  RabbitHandler,
 } from './rabbit-transport.models';
 import { ObjectUtil } from './rabbit-transport.utils';
 
+type RabbitHandler = (data: unknown, context: RabbitMessageContext) => Promise<unknown>;
 export class RabbitTransportStrategy extends Server implements CustomTransportStrategy {
 
   private connection?: AmqpConnectionManager;
@@ -42,6 +42,7 @@ export class RabbitTransportStrategy extends Server implements CustomTransportSt
     handler: RabbitHandler,
     channel: Channel,
   ): Promise<void> {
+    // TODO: We can get options from metadata
     await channel.assertQueue(queue, {
       durable: false,
     });
