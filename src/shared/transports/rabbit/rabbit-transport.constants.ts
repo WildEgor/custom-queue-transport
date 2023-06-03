@@ -1,0 +1,3 @@
+export const RMQ_ROUTES_PATH = 'RMQ_ROUTES_PATH';
+export const RMQ_TRANSPORT = '__RABBIT_TRANSPORT__';
+export const RMQ_ROUTES_OPTIONS = 'RMQ_ROUTES_OPTIONS';

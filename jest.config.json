@@ -1,0 +1,10 @@
+{
+  "maxWorkers": 1,
+  "moduleFileExtensions": ["ts", "js"],
+  "testMatch": [
+    "<rootDir>/tests/**/*.spec.ts"
+  ],
+  "transform": {
+    "^.+\\.ts$": "ts-jest"
+  }
+}

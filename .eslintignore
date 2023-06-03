@@ -2,6 +2,9 @@
 /dist
 /node_modules
 
+# misc
+**/*/decorator*
+
 # Docker
 /data
 /databases
@@ -41,13 +44,12 @@ output
 !.vscode/launch.json
 !.vscode/extensions.json
 
-# local env files (.env.local for cicd)
+# local env files
 .env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
 
-.drone.yml
-start.sh
-.npmrc
+#types
+@types/*
